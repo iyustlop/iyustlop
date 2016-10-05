@@ -1,0 +1,32 @@
+from gi.repository import Gtk
+
+class gui():
+
+def on_open_clicked(self, button):
+	print "\"Open\" button was clicked"
+
+def on_close_clicked(self, button):
+	print "Closing application"
+	Gtk.main_quit()
+
+def __init__(self):
+self.window = Gtk.Window()
+self.window.connect('delete-event', Gtk.main_quit)
+
+self.box = Gtk.Box()
+self.window.add(self.box)
+
+self.button = Gtk.Button(label='Open')
+self.button.connect("clicked", self.on_open_clicked)
+
+self.box.pack_start(self.button, True, True, 0)
+
+self.button = Gtk.Button(label='Cerrar')
+self.button.connect("clicked", self.on_close_clicked)
+
+self.box.pack_start(self.button, True, True, 0)
+
+self.window.show_all()
+Gtk.main()
+if __name__ == '__main__':
+gui = gui()

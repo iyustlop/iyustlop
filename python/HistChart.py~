@@ -1,0 +1,15 @@
+import matplotlib.pyplot as plt
+
+population_ages = [22,55,66,77,88,12,34,45,67,78,89,10,92,93,84,75]
+
+ids = [x for x in range(len(population_ages))]
+
+plt.bar(ids,population_ages)
+
+plt.xlabel('Time')
+plt.ylabel('Position Demand')
+
+plt.title('Repositioner Demand\n Position')
+
+plt.show()
+

@@ -1,0 +1,7 @@
+Abrir Matlab y establecer esta carpeta como carpeta de trabajo.
+
+El cuerpo de programa se encuentra encapsulado en "medio_eliptico.m".
+
+Para ejecutar el programa una vez establecida esta carpeta como carpeta de trabajo basta con escribir "medio_eliptico" en la línea de comandos para llamar a la función que encapusla el cuerpo del programa.
+
+Daniel Verdugo Moreno

@@ -1,0 +1,65 @@
+body{
+	font-family: 'Lato', sans-serif;
+}
+img{
+	max-width: 100%;
+}
+a,.azul-claro{
+	color: #70DEFC
+}
+.vete-arriba{
+	vertical-align: top;
+}
+.lateral-size{
+	height: 200px;
+	width: 180;
+}
+.quitar-float{
+	float: none;
+}
+.no-lista li{
+	list-style-type: none;
+}
+.no-lista{
+	margin: 0px;
+	padding: 0px;
+}
+.inline-block{
+	float: none;
+	display: inline-block;
+	margin-right: -4px;
+}
+.espacio-arriba{
+	margin-top: 100px;
+}
+.espacio-derecha{
+	margin-right: 3em;
+}
+.shadows{
+	font-family: 'Shadows Into Light', cursive;
+}
+.azul{
+	color: #155CBC
+}
+.se-gris{
+	background-color: #eee;
+}
+.padding-largo{
+	padding: 5px 10px;
+}
+.grande{
+	font-size: 4em;
+}
+/*
+#principal{
+	width: 40%;
+	float: none;
+	margin: 0 auto;
+	margin-top: 100px;
+	text-align: center;
+}
+
+#otro_elemento{
+	margin-top: 100px;
+}
+*/
