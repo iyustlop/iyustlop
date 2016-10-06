@@ -1,9 +1,15 @@
+#!/usr/bin/env python
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from log_google import loggin_google
-from inoreader import landingInInoreader
+from login.log_google import loggin_google
+from webs.inoreader import landingInInoreader
+from user.user import myUser
 import time
 import sys
+import logging
+
+usuario = myUser()
 
 driver=webdriver.Chrome('/home/portatil/Documentos/Desarrollo/python/Selenium/ChromeDriver/chromedriver')
 if (str(sys.argv[2]) == ''):
@@ -23,7 +29,9 @@ landingInInoreader(driver)
 driver.implicitly_wait(20) #//gives an implicit wait for 20 seconds
 
 #me logueo en google.
-loggin_google (driver,"iyustlop@gmail.com","password")
+logging.info('%s before you %s', usuario.getUser(), usuario.getPassword())
+
+loggin_google (driver,usuario.getUser(),usuario.getPassword())
 
 driver.implicitly_wait(20) #//gives an implicit wait for 20 seconds
 
@@ -46,7 +54,7 @@ driver.implicitly_wait(20) #//gives an implicit wait for 20 seconds
 my_feeds = driver.find_element_by_xpath('//*[@id="sb_rp_heading"]/a').text
 
 if (my_feeds == 'Found 0 articles'):
-	print ('error_10: No hay articulos')
+	logging.error ('error_10: No hay articulos')
 	driver.quit()
 else:
 	try:
@@ -60,7 +68,7 @@ else:
 			#print(fecha)
 			time.sleep(float(sys.argv[1]))
 	except Exception as e:
-		print ('exit')
+		logging.error ('force close the browser')
 		driver.quit()
 		sys.exit()
 
