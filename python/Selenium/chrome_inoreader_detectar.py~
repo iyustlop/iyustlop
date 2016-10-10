@@ -11,8 +11,19 @@ import logging
 
 usuario = myUser()
 
-driver = webdriver.Firefox()
-driver.maximize_window() 
+logging.info(usuario.getDriver()) 
+driver=webdriver.Chrome(usuario.getDriver())
+
+if (str(sys.argv[2]) == ''):
+	logging.error ('error_2: seleccionar opcion de visualizacion')
+	sys.exit()
+elif (str(sys.argv[2]) == 'h'):
+	driver.set_window_size(960, 1080)
+elif (str(sys.argv[2]) == 'm'):
+	driver.maximize_window()
+else:
+	logging.error ('1: seleccionar opcion de visualizacion correcta')
+	sys.exit()
 
 #voy a Inoreader y pincho el enlace 
 landingInInoreader(driver)
@@ -20,13 +31,14 @@ landingInInoreader(driver)
 driver.implicitly_wait(20) #//gives an implicit wait for 20 seconds
 
 #me logueo en google.
-loggin_google (driver,"iyustlop@gmail.com","password")
+logging.info('%s before you %s', usuario.getUser(), usuario.getPassword())
+
+loggin_google (driver,usuario.getUser(),usuario.getPassword())
 
 driver.implicitly_wait(20) #//gives an implicit wait for 20 seconds
 
 panel = driver.find_element_by_id('feed_searcher')
-panel.send_keys(str(sys.argv[3]))
-#driver.implicitly_wait(20) #//gives an implicit wait for 20 seconds
+panel.send_keys(str(sys.argv[4]))
 panel.send_keys(Keys.RETURN)
 
 driver.implicitly_wait(20) #//gives an implicit wait for 20 seconds
@@ -61,8 +73,6 @@ else:
 		logging.error ('force close the browser')
 		driver.quit()
 		sys.exit()
-
-
 
 
 
