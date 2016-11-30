@@ -58,6 +58,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="/home/portatil/Documentos/Desarrollo/Java/Crawler"/>
 			<item value="/home/portatil/Documentos/Desarrollo/Java/TestRail"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -71,12 +72,14 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
+			<item value="TestRail.kawasaki"/>
 			<item value="TestRail.testrail"/>
 		</list>
 		<list key="groupId">
 			<item value="TestRail"/>
 		</list>
 		<list key="artifactId">
+			<item value="kawasaki"/>
 			<item value="testrail"/>
 		</list>
 		<list key="projectNameTemplate">
